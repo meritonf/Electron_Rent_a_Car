@@ -9,6 +9,7 @@
   "author": "Meriton Ferati",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "electron": "^1.7.9"
   }
 }
