@@ -27,7 +27,7 @@ How to get our Application:
 
 7) Start application:
     1. Open git bash and go to the folder path example:"C:\Program Files\Electron_Rent_a_Car"
-      $ cd C:\Program Files\Electron_Rent_a_Car
+    1.1 $ cd C:\Program Files\Electron_Rent_a_Car
     2. After you are on the right directory type: ' npm start ' to start our application.
  
  - Optionally -   
