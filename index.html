@@ -18,7 +18,7 @@
             </div>
         </div>
         <button type="button" style="color:red;" onclick="accountManagementWindow()">Account Management</button>
-        
+        <button type="button" style="color:red;" onclick="addClientWindow()">Add Client</button>
     </body>
     <script>
         console.log(process);
@@ -33,10 +33,26 @@
             
             accwindow = new BrowserWindow({
                 width:1050,
-                height:500,
-                title: 'Account Management'
+                height:350,
+                title: 'Account Management',
+                icon:__dirname+'/img/sys.png'
             });
            accwindow.loadURL('file://' +__dirname+'/accManage.html') 
         }
+    </script>
+    <script>
+        function addClientWindow(){
+            const remote = require('electron').remote;
+            const BrowserWindow = remote.BrowserWindow;
+            
+            addclientwindow = new BrowserWindow({
+                width:500,
+                height:500,
+                title: 'Add a Client',
+                icon:__dirname + '/img/sys.png'
+            });
+            addclientwindow.loadURL('file://' + __dirname + '/newClient.html')
+        }
+        
     </script>
 </html>
