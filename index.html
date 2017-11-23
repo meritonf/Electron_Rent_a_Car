@@ -2,23 +2,79 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/navbar.css">
+        <link rel="stylesheet" href="style/hr.css">
         <title>Rent A Car</title>
     </head>
     <body>
+       <div id="navbar">
+           <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>    
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    <li class="navbar-left"><a class="btn btn-info btn-xs"  onclick="addEmployeeWindow()">New Employee</a></li>
+                    <li class="active"><a href="#">CARS</a></li>
+                    <li class="navbar-right"><a class="btn btn-info btn-xs"  onclick="accountManagementWindow()">Account Management</a></li>
+                    <li class="navbar-right"><a class="btn btn-info btn-xs"  onclick="addClientWindow()">Add Client</a></li>
+                    </ul>
+                </div>
+            </nav>
+       </div>
         <div class="container">
-            <h1>Rent A Car: Grupi1</h1>
-            <div id="teamMembers">
-                <ul>
-                    <li class="list-group-item" style="color:lime; border:grey dotted; text-decoration:underline;">Meriton Ferati</li>
-                    <li class="list-group-item" style="color:lime; border:grey dotted;">Arbnore Basha</li>
-                    <li class="list-group-item" style="color:lime; border:grey dotted;">Salih Cej</li>
-                    <li class="list-group-item" style="color:lime; border:grey dotted;">Fatlum Haxhiu</li>
-                    <li class="list-group-item" style="color:red; border:grey dotted;">Endrit Zhuri</li>
-                </ul>
+            <hr class="footer">
+            <h1>Borrowed Cars</h1>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="img/lambo.jpg" class="img-responsive" alt="Lamborghini" >
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="img/lambo.jpg" class="img-responsive" alt="Lamborghini" >
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="img/lambo.jpg" class="img-responsive" alt="Lamborghini" >
+                    </div>
+                </div>
+             </div>
+             
+                <hr class="body">
+                
+                <h1>Free Cars</h1>
+                
+                <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="img/lambo.jpg" class="img-responsive" alt="Lamborghini" >
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="img/lambo.jpg" class="img-responsive" alt="Lamborghini" >
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="img/lambo.jpg" class="img-responsive" alt="Lamborghini" >
+                    </div>
+                </div>
+             </div>
+             <hr class="footer">
+                
             </div>
+            
         </div>
-        <button type="button" style="color:red;" onclick="accountManagementWindow()">Account Management</button>
-        <button type="button" style="color:red;" onclick="addClientWindow()">Add Client</button>
     </body>
     <script>
         console.log(process);
@@ -26,6 +82,11 @@
     <script>
         require('./renderer.js');
     </script>
+    
+ <!--   <script>if(typeof module === 'object'){window.module = module;module = undefined;}</script>
+    <script src="/node_module/jquery/dist/jquery.min.js"></script>
+    <script>if(window.module) module=window.module;</script> -->
+    
     <script>
         function accountManagementWindow(){
             const remote= require('electron').remote;
@@ -55,4 +116,25 @@
         }
         
     </script>
+    
+        <script>
+        function addEmployeeWindow(){
+            const remote = require('electron').remote;
+            const BrowserWindow = remote.BrowserWindow;
+            
+            addclientwindow = new BrowserWindow({
+                width:500,
+                height:500,
+                title: 'New Employee',
+                icon:__dirname + '/img/sys.png'
+            });
+            addclientwindow.loadURL('file://' + __dirname + '/newEmployee.html')
+        }
+        
+    </script>
+  <!--  <script type="text/javascript">
+         $(document).ready(function(){
+             $('#menu').load('navbar.html');
+         });
+    </script> -->
 </html>
