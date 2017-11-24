@@ -5,10 +5,10 @@ const url = require('url');
 let window;
 
 function createWindow(){
-    window = new BrowserWindow({width:1500, height: 1000,icon:__dirname+'/img/sys.png'});
+    window = new BrowserWindow({width:1000, height: 1000,icon:__dirname+'/img/sys.png'});
     
     window.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, 'login.html'),
         protocol: 'file:',
         slashes:true
     }));
