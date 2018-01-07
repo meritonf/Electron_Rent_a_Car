@@ -1,11 +1,16 @@
 const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const url = require('url');
+const http = require('http');
 
 let window;
 
 function createWindow(){
-    window = new BrowserWindow({width:1000, height: 1000,icon:__dirname+'/img/sys.png'});
+    window = new BrowserWindow({
+        width:1000,
+        height: 1000,
+        icon:__dirname+'/img/sys.png'
+    });
     
     window.loadURL(url.format({
         pathname: path.join(__dirname, 'login.html'),
@@ -14,7 +19,7 @@ function createWindow(){
     }));
     
     //open devtools
-    window.webContents.openDevTools();
+    window.webContents.openDevTools([{detached: true}]);
     
     window.on('closed', ()=>{
         window=null;
@@ -29,4 +34,3 @@ app.on('window-all-closed', ()=>{
        app.quit();
    } 
 });
-
